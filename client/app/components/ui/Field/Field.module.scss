@@ -1,0 +1,23 @@
+@import '../../../assets/styles/mixins.scss';
+
+.input {
+	@apply relative block mb-5;
+	@include shadow();
+
+	> input {
+		@apply p-2 w-full text-base rounded-md overflow-hidden block bg-white;
+
+		&::placeholder {
+			color: text-gray-500;
+		}
+
+		&:focus-visible {
+			@apply border-primary;
+		}
+	}
+}
+
+.error {
+	@apply absolute -bottom-4 left-0 w-ful text-primary;
+	font-size: 0.75rem;
+}
