@@ -1,4 +1,4 @@
-import axios, { axiosClassic } from 'api/interceptor'
+import interceptor, { axiosClassic } from 'api/interceptor'
 import { IMovieDto } from 'dto/movie.dto'
 
 import { IMovie } from '@/shared/interfaces/movie.interface'
@@ -19,14 +19,14 @@ export const MovieService = {
 	},
 
 	async createMovie() {
-		return axios.post<string>('/movie')
+		return interceptor.post<string>('/movie')
 	},
 
 	async updateMovie(id: number, body: IMovieDto) {
-		return axios.put<IMovie>(`/movie/${id}`, body)
+		return interceptor.put<IMovie>(`/movie/${id}`, body)
 	},
 
 	async deleteMovie(id: number) {
-		return axios.delete(`/movie/${id}`)
+		return interceptor.delete(`/movie/${id}`)
 	}
 }

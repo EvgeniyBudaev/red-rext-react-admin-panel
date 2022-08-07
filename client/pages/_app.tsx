@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import AuthProvider from 'providers/auth-provider/AuthProvider'
 
 import '@/assets/styles/globals.scss'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools/build/types/react-query-devtools/src/devtools'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<AuthProvider>
 				<Component {...pageProps} />
 			</AuthProvider>
+			<ReactQueryDevtools initialIsOpen={false} />
 		</QueryClientProvider>
 	)
 }

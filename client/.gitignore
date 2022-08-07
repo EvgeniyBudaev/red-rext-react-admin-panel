@@ -331,3 +331,5 @@ static
 *.static
 **.static
 */.static/*
+
+*.next

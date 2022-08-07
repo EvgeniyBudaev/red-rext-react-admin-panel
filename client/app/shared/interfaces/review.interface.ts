@@ -7,3 +7,9 @@ export interface IReview {
 	movie: IMovie
 	description: string
 }
+
+export interface IReviews {
+	movieId: number;
+	reviews: IReview[];
+	isLoading: boolean;
+}
