@@ -1,6 +1,6 @@
 .item {
 	@apply relative block;
-	width: 18%;
+	width: 14%;
 
 	.rating {
 		@apply absolute -left-2.5 top-2 bg-green-600 text-white rounded-md py-1 px-4 text-center z-10 text-sm;
@@ -19,4 +19,6 @@
 			@apply text-primary;
 		}
 	}
+
+	&.small {}
 }
