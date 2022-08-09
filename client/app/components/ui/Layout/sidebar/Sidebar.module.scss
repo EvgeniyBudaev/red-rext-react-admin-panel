@@ -4,12 +4,15 @@
   @apply relative;
   > div {
     @apply text-center absolute w-full;
-    background-color: #dae0fb;
+    @include shadow('lg', false);
+    background-image: linear-gradient(to right, #e0e4fb, #c7cced);
     min-height: 500px;
-    top: 25%;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
-    @include shadow('lg', false);
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
 
     .logo {
       @apply text-5xl block mb-7;
