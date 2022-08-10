@@ -77,5 +77,6 @@ nest g resource user --no-spec
 nest g resource movie --no-spec
 nest g resource review --no-spec
 nest g resource views --no-spec
+nest g resource statistics --no-spec
 
 

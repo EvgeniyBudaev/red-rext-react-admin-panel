@@ -1,4 +1,4 @@
-import { MovieModel } from './../movie/movie.model'
+import { MovieModel } from '../movie/movie.model'
 import { Column, ForeignKey, Model, Table } from 'sequelize-typescript'
 
 @Table({ tableName: 'Views', deletedAt: false, version: false })

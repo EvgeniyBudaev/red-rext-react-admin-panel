@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { PassportStrategy } from '@nestjs/passport'
 import { InjectModel } from '@nestjs/sequelize'
-import { validate } from 'class-validator'
 import { ExtractJwt, Strategy } from 'passport-jwt'
 import { UserModel } from '../user.model'
 
