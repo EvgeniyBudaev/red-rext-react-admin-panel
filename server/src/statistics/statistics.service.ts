@@ -5,6 +5,17 @@ import {ReviewModel} from "../review/review.model";
 import {ViewsModel} from "../views/views.model";
 import {col, fn} from "sequelize";
 import {IStatisticItem} from "./statistics.interface";
+import * as dayjs from 'dayjs'
+import * as updateLocale from 'dayjs/plugin/updateLocale'
+
+dayjs.extend(updateLocale)
+
+dayjs.updateLocale('en', {
+    monthsShort: [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ]
+})
 
 @Injectable()
 export class StatisticsService {
@@ -70,12 +81,18 @@ export class StatisticsService {
                     [fn('sum', col('views')), 'views'],
                     [fn('date_trunc', 'month',  col('createdAt')), 'month']
                 ],
-                group: 'month'
+                group: 'month',
+                order: [[col('month'), 'ASC']],
+                raw: true
             })
 
         return {
             totalFees,
-            viewsByMonth
+            viewsByMonth: viewsByMonth.map((item) => ({
+                ...item,
+                // @ts-ignore
+                month: dayjs(item.month).format('MMM')
+            }))
         }
     }
 }

@@ -4,7 +4,7 @@ import {useQuery} from "@tanstack/react-query";
 import {StatisticsService} from "@/services/statistics.service";
 import Loader from "@/ui/Loader/Loader";
 import TotalFees from "@/screens/dashboard/main/MiddleStatistics/total-fees/TotalFees";
-import ViewsChart from "@/screens/dashboard/main/MiddleStatistics/ViewsChart";
+import ViewsChart from "@/screens/dashboard/main/MiddleStatistics/views-chart/ViewsChart";
 import styles from './MiddleStatistics.module.scss'
 
 const MiddleStatistics: FC = () => {

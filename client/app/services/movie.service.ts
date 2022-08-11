@@ -19,7 +19,7 @@ export const MovieService = {
 	},
 
 	async createMovie() {
-		return interceptor.post<string>('/movie')
+		return interceptor.post<number>('/movie')
 	},
 
 	async updateMovie(id: number, body: IMovieDto) {
