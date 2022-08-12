@@ -14,7 +14,7 @@ const TableItem: FC<ITableItemProps> = ({item}) => {
         <div  className={styles['table-item']}>
             <div className={styles.info}>
                 {item.image && (
-                    <Image src={item.image} alt={item.name} width={33} height={50} />
+                    <Image src={item.image} alt={item.name} width={40} height={61} />
                 )}
                 <div>{item.name}</div>
             </div>
